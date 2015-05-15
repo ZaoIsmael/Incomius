@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="encoding">
+    <title>Cube</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/cube.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/datepicker.css" rel="stylesheet">
+    <link href="FortAwesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/jquery.colorpicker.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+
+  </head>
+
+<body>
+
+  <div class="menu-principal">
+    <div class="menu-principal-controles">
+      <div class="container">
+        <ul class="mainnav">
+          <li>
+            <a href="./">
+              <i class="icon-home"></i>
+              <span>Inicio</span>
+            </a>              
+          </li>
+                
+          <li>
+            <a href="./faq.html">
+              <i class="icon-search"></i>
+              <span>Buscar</span>
+            </a>              
+          </li>
+         
+          <li>
+            <a href="./reports.html">
+              <i class="icon-bar-chart"></i>
+              <span>Graficas</span>
+            </a>            
+          </li>
+          
+          <li>          
+            <a href="./guidely.html">
+              <i class="icon-folder-open"></i>
+              <span>Ultimo dia</span>
+            </a>                    
+          </li>
+          
+          <li class="active">          
+            <a href="./pricing.html">
+              <i class="icon-edit"></i>
+              <span>Crear</span>
+            </a>            
+          </li>
+
+          <li>     
+            <a href="#l">
+              <i class=" icon-share-alt"></i>
+              <span>Más</span>
+              <b class="caret"></b>
+            </a>       
+          </li>
+        </ul>
+        <img src="img/logo.png" class="incomius-logo" alt="Incomius Logo">
+        <ul class="mainnav pull-right">
+          <li class="dropdown">         
+            <a href="./pricing.html" class="dropdown" data-toggle="dropdown">
+              <i class="icon-user"></i>
+              <span>Javier Vargas</span>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu" style="text-align:left; margin-top: -0.5px; margin-right: -2px;">
+              <li><a tabindex="-1" href="#">Perfil</a></li>
+              <li><a tabindex="-1" href="#;">Mis cuentas</a></li>
+              <li class="divider"></li>
+              <li><a tabindex="-1" href="#">Salir</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div> 
+    </div> 
+  </div>
+  
+  <div id="contenido">
+    <div class="cuerpo-contenido">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            
+            <div class="contenedores">
+              <div class="cabecera-contenedor">
+                <i class="icon-upload"></i>
+                <h3>Nuevo movimiento</h3>
+              </div> 
+              
+              <div class="cuerpo-contenedor">
+                <div class="form-horizontal">
+                <fieldset>
+                  <legend>Datos obligatorios</legend>
+                  <div class="control-group">
+                      <label class="control-label" for="Categoria">Categoria</label>
+                      <div class="controls">
+                        <a href="#" class="btn" id="mostrarMenu" >
+                          Categoria
+                          <span class="caret"></span>
+                        </a>
+                        <span class="help-inline form-ayuda help-category">
+                          <a class="category-help" href="#" rel="tooltip" data-placement="right" title="Podrá encontrar movimientos especificando su categoría o subcategoría.">
+                            <i class="icon-info-sign"></i>
+                          </a>
+                        </span>
+
+                        <div id="category" class="dropdown clearfix">
+                          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                          </ul>
+                        </div>
+
+                      </div> 
+                  </div>
+                  <div class="control-group">
+                      <label class="control-label" for="Fecha">Fecha</label>
+                      <div class="controls">
+                        <input type="text" class="input span2 calendario" id="input03" placeholder="dd/mm/yyyy" data-date-format="dd-mm-yyyy" data-date-weekStart="1"/>
+                        <span class="help-inline form-ayuda">
+                          <a class="category-help" href="#" rel="tooltip" data-placement="right" title="Los movimientos se organizan automaticamente en meses y años.">
+                            <i class="icon-info-sign"></i>
+                          </a>
+                        </span>
+                      </div>
+                  </div>
+                  <div class="control-group">
+                      <label class="control-label" for="TipoMovimiento">Tipo Movimiento</label>
+                      <div class="controls">
+                        <select class="span2">
+                          <option value="Ingresos">Ingresos</option>
+                          <option value="Gastos">Gastos</option>
+                        </select>
+                      </div>
+                  </div>
+                  <div class="control-group">
+                      <label class="control-label" for="Cantidad">Cantidad</label>
+                      <div class="controls">
+                        <input type="text" class="input span2" id="input03" placeholder="200.99€" />
+                        <span class="help-inline form-ayuda">
+                          <a class="category-help" href="#" rel="tooltip" data-placement="right" title="Cantidad sin signo, usando un punto para los decimales.">
+                            <i class="icon-info-sign"></i>
+                          </a>
+                        </span>
+                      </div>
+                  </div>
+                  <legend style="margin-top:40px;">Datos opcionales</legend>
+                  <div class="control-group">
+                      <label class="control-label" for="Descripcion">Descripción</label>
+                      <div class="controls">
+                        <input type="text" class="input span3" id="input03" placeholder="Almacen Moreno" />
+                        <span class="help-inline form-ayuda">
+                          <a class="category-help" href="#" rel="tooltip" data-placement="right" title="Podra realizar la busqueda de un movimiento por su descripcion.">
+                            <i class="icon-info-sign"></i>
+                          </a>
+                        </span>
+                      </div>
+                  </div>
+                  <div class="control-group">
+                      <label class="control-label" for="Comentario">Comentario</label>
+                      <div class="controls">
+                        <textarea name="comentario" rows="4" class="span3" ></textarea>
+                        <span class="help-inline form-ayuda">
+                          <a class="category-help" href="#" rel="tooltip" data-placement="right" title="Puede almacenar comentarios sobre el movimiento.">
+                            <i class="icon-info-sign"></i>
+                          </a>
+                        </span>
+                      </div>
+                  </div>
+                  <div class="control-group">
+                      <div class="controls">
+                        <label class="checkbox">
+                          <input type="checkbox" id="optionsCheckbox" value="option1">Voy a seguir añadiendo movimientos
+                        </label>
+                      </div>
+                  </div>
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-primary btn-save">Guardar</button>
+                    <button class="btn">Limpiar</button>
+                  </div>
+                </fieldset>
+                
+              </div>
+              </div>
+            </div>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="categoria" >
+    <div class="modal-header">
+      <a class="close" data-dismiss="modal">×</a>
+      <h3>Nueva categoria</h3>
+    </div>
+    <div class="modal-body">
+      <div class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label" for="NuevaCategoria">Nueva subcategoria</label>
+          <div class="controls">
+            <input type="text" class="input span2" id="input03" placeholder="General" />
+          </div>
+          <select id="picker">
+                <option value="FFFFFF" selected="selected">FFFFFF</option>
+                <option value="999999">999999</option>
+                <option value="468847">468847</option>
+                <option value="F89406">F89406</option>
+                <option value="B94A48">B94A48</option>
+                <option value="3A87AD">3A87AD</option>
+                <option value="333333">333333</option>
+          </select>
+        </div>
+      </div>
+      <div class="alert alert-info">
+        <h4 class="alert-heading">Informacion</h4>
+        Los movimientos se organizan por categorias. Podra encontrarlos especificando la categoria a la que pertenece.
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="btn" data-dismiss="modal" style="width:47px;">Salir</a>
+      <a href="#" class="btn btn-primary">Guardar</a>
+    </div>
+  </div>
+  
+  <div id="feedback">
+    <a href="https://incomius.uservoice.com/" target="_blank">
+      <img src="http://widget.uservoice.com/dcache/widget/feedback-tab.png?t=Sugerencias&amp;c=ffffff&amp;r=90" alt="Sugerencias">
+    </a>
+  </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.js" type="text/javascript"></script>
+<script src="js/highcharts.js" type="text/javascript"></script>
+<script src="js/bootstrap-datepicker.js" type="text/javascript"></script>
+<script src="js/jquery.colorpicker.js" type="text/javascript"></script>
+<!-- notify plugin -->
+<script type="text/javascript" src="js/noty/jquery.noty.js"></script>
+
+<script type="text/javascript" src="js/noty/layouts/top.js"></script>
+<script type="text/javascript" src="js/noty/layouts/topLeft.js"></script>
+<script type="text/javascript" src="js/noty/layouts/topCenter.js"></script>
+<script type="text/javascript" src="js/noty/layouts/topRight.js"></script>
+<!-- You can add more layouts if you want -->
+
+<script type="text/javascript" src="js/noty/themes/default.js"></script>
+
+
+<script type="text/javascript">
+  //notify
+  var noty;
+  function notifySuccess(){
+    noty = noty({
+      layout: 'top',
+      theme: 'default',
+      type: 'success',
+      text: 'noty - a jquery notification library!',
+      timeout: 2000
+    });  
+  }
+
+  function notifyAlert(){
+    noty = noty({
+      layout: 'top',
+      theme: 'default',
+      type: 'alert',
+      text: 'noty - a jquery notification library!',
+      timeout: 2000
+    });  
+  }
+
+  function notifyError(){
+    noty = noty({
+      layout: 'top',
+      theme: 'default',
+      type: 'error',
+      text: 'noty - a jquery notification library!',
+      timeout: 2000
+    });  
+  }
+
+  //notifyTest();
+</script>
+
+
+<script>
+$(document).ready(function() {
+  var s="mostrarMenu";
+  var obj = [ ["Coche", "Gasolina", "Reparaciones"], ["Comida", "Supermercado", "Restaurantes"],["Hogar", "Luz", "Agua"]];
+    
+  for(x=0;x<obj.length;x++){
+    $("#category > ul").append('<li class="'+x+' dropdown-submenu"><a href="#">'+ obj[x][0] +'</a></li>');
+    for (j=1;j<obj[x].length;j++){
+      if(!$("#category ul > li."+x+"").find("ul").length)
+        $("#category ul > li."+x+"").append('<ul class="dropdown-menu"></ul>');
+      $("#category ul > li."+ x +" ul").append('<li><a href="#" class="c" >'+ obj[x][j] +'</a></li>');
+    }
+    $("#category ul > li."+ x +" ul").append('<li class="divider"></li>');
+    $("#category ul > li."+ x +" ul").append('<li class="add-category"><a data-toggle="modal" href="#categoria"><i class="icon-plus"></i> Añadir categoria</a></li>');
+  }
+
+  $('a.category-help').tooltip();
+
+  $('.calendario').datepicker();
+
+  $('#picker').colorpicker({  
+    size: 20,  
+    count: 1,
+    label: 'Color: ',  
+    hide: false  
+  }); 
+
+  $('input#input03').click(function(){
+      $('div.colorpicker-picker').fadeOut('slow');
+  });
+
+  var catElegida;
+  $('a.c').click(function(e) {
+    $(this).addClass('categoria_seleccionada'); 
+    catElegida = $('a.categoria_seleccionada').text(); 
+    $('#mostrarMenu').html(catElegida+' <span class="caret"></span>');
+    $('#menu ul').hide();
+    $('a.categoria_seleccionada').removeClass('categoria_seleccionada');
+  });
+  
+  $('#mostrarMenu').click(function(e) {
+    $('#category > ul').show();
+  });
+  
+  
+  $('#category > ul > li > ul').click(function(e){
+    if(e.button == 0 && e.target.id != s){
+      $('#category > ul').hide(); 
+    }  
+  });
+
+  $(document).click(function(e){
+    if(e.button == 0 && e.target.id != s){
+      $('#category > ul').hide(); 
+    }  
+  });
+
+  $('input#input03').click(function(){
+    notifyError();
+  });
+});
+</script>
+
+<script type="text/javascript">
+  /*var uvOptions = {};
+  (function() {
+    var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+    uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/KF4lFHce8TfNfMo10G9mw.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+  })();*/
+</script>
+
+</body>
+</html>

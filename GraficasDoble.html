@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="encoding">
+    <title>Cube</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/cube.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/datepicker.css" rel="stylesheet">
+    <link href="css/DT_bootstrap.css" rel="stylesheet">
+    <link href="FortAwesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+
+  </head>
+
+<body>
+
+  <div class="menu-principal">
+    <div class="menu-principal-controles">
+      <div class="container">
+        <ul class="mainnav">
+          <li>
+            <a href="./">
+              <i class="icon-home"></i>
+              <span>Inicio</span>
+            </a>              
+          </li>
+                
+          <li>
+            <a href="./faq.html">
+              <i class="icon-search"></i>
+              <span>Buscar</span>
+            </a>              
+          </li>
+         
+          <li class="active">
+            <a href="./reports.html">
+              <i class="icon-bar-chart"></i>
+              <span>Graficas</span>
+            </a>            
+          </li>
+          
+          <li>          
+            <a href="./guidely.html">
+              <i class="icon-folder-open"></i>
+              <span>Ultimo dia</span>
+            </a>                    
+          </li>
+          
+          <li>          
+            <a href="./pricing.html">
+              <i class="icon-edit"></i>
+              <span>Crear</span>
+            </a>            
+          </li>
+
+          <li>     
+            <a href="#l">
+              <i class=" icon-share-alt"></i>
+              <span>M&aacute;s</span>
+              <b class="caret"></b>
+            </a>       
+          </li>
+        </ul>
+        <img src="img/logo.png" class="incomius-logo" alt="Incomius Logo">
+        <ul class="mainnav pull-right">
+          <li class="dropdown">         
+            <a href="./pricing.html" class="dropdown" data-toggle="dropdown">
+              <i class="icon-user"></i>
+              <span>Javier Vargas</span>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu" style="text-align:left; margin-top: -0.5px; margin-right: -2px;">
+              <li><a tabindex="-1" href="#">Perfil</a></li>
+              <li><a tabindex="-1" href="#;">Mis cuentas</a></li>
+              <li class="divider"></li>
+              <li><a tabindex="-1" href="#">Salir</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div> 
+    </div> 
+  </div>
+  
+  
+  <div id="contenido">
+    <div class="cuerpo-contenido">
+      <div class="container">
+        <div class="row">
+          
+          <div class="span12">
+            
+            <div class="contenedores">
+              <div class="cabecera-contenedor">
+                <i class="icon-bar-chart"></i>
+                <h3>Graficas</h3>
+              </div> 
+              
+              <div class="cuerpo-contenedor" >
+                <!--<div class="row">-->
+                  <div class="span2" style="padding:5px 0; margin-left:0;">
+                    
+                    <ul class="nav nav-list">
+                      <li class="nav-header">Gastos</li>
+                      <li style="margin-left:5px;"><a href="GraficasFecha.html" id="gastos-fecha"><i class="icon-home"></i> Por fecha</a></li>
+                      <li style="margin-left:5px;"  class="active"><a href="GraficasCategoria.html" id="gastos-categoria"><i class="icon-home"></i> Por categoria</a></li>
+                      
+                      <li class="nav-header">Ingresos</li>
+                      <li style="margin-left:5px;"><a href="#"><i class="icon-home"></i> Por fecha</a></li>
+                      <li style="margin-left:5px;"><a href="#"><i class="icon-home"></i> Por categoria</a></li>
+                       <li class="nav-header">Evolucion</li>
+                      <li style="margin-left:5px;"><a href="GraficasEvolucion.html"><i class="icon-home"></i> De una categoria</a></li>
+                    </ul>
+                    
+                  </div>
+                  <div class="span9">
+                    <div style="margin-left:30px;">
+                      <ul class="nav nav-pills">
+                        <li class="active"><a href="#"  rel="tooltip" data-original-title="Suma de los gastos del mes actual agrupados por categor&iacute;a" id="mes-actual">Mes actual</a></li>
+                        <li><a href="#">Ultimos 3 meses</a></li>
+                        <li><a href="#">Ultimos 6 meses</a></li>
+                        <li ><a data-toggle="modal" href="#fecha">Intervalo de fechas</a></li>
+                        <!--<li style="margin-left:50px;"><a href="#" class="btn btn-mini">Comparar</a></li>-->
+
+
+                      </ul>
+                    </div>
+
+                    <div id="gra-area" class="contenedor-grafica span4"></div>
+                    <div id="gra-area2" class="contenedor-grafica span4" style="float:right;"></div>
+                    
+                  </div>
+                  <div class="clearfix"></div>
+                    
+              </div>
+
+                <!--</div>-->
+                
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!--<div class="modal fade" id="fecha" style="overflow:hidden; margin:-250px 0 0 -130px; width:350px;">
+    <div class="modal-header">
+      <a class="close" data-dismiss="modal"><i class="icon-remove"></i></a>
+      <i class="icon-tasks"></i>
+      <h3>Intervalo de fechas</h3>
+    </div>
+    <div class="modal-body" style="padding:0;">
+      <input type="text">
+      <input type="text"> 
+    </div>
+    <div class="modal-footer">
+      <button>Aceptar</button>
+      <button>Cancelar</button>
+    </div>
+  </div>-->
+
+  <div class="modal hide fade" id="fecha">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3>Intervalo de fechas</h3>
+    </div>
+    <div class="modal-body">
+      <span>Desde</span>
+      <input type="text" name="fecha1" class="span1" style="width:75px;">
+      <span>Hasta</span>
+      <input type="text" name="fecha2" class="span1" style="width:75px;"> 
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</a>
+      <a href="#" class="btn btn-primary">Aceptar</a>
+    </div>
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.js" type="text/javascript"></script>
+<script src="js/highcharts.js" type="text/javascript"></script>
+<script src="js/bootstrap-datepicker.js" type="text/javascript"></script>
+<script src="js/jquery.dataTables.js" type="text/javascript"></script>
+<script src="js/DT_bootstrap.js" type="text/javascript"></script>
+<script>
+var chart1;
+
+$(document).ready(function() {
+  
+  chart2 = new Highcharts.Chart({
+    chart: {
+      renderTo: 'gra-area',
+      plotBackgroundColor: '#FFF',
+      plotBorderWidth: null,
+      plotShadow: false
+      
+    },
+    title: {
+          text: 'Categorias'
+    },
+    tooltip: {
+      formatter: function() {
+              return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %';
+      }
+    },
+    plotOptions: {
+      pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+                  enabled: false
+          },
+          showInLegend: true
+        }
+    },
+    series: [{
+      type: 'pie',
+      name: 'Browser share',
+      data: [
+        ['Transporte',       26.8],
+        {
+                name: 'Casa',
+                y: 45.0,
+                sliced: true,
+                selected: true
+        },
+        ['Ocio',    8.5],
+        ['Comida',     19],
+        ['Otros',   0.7],
+        ['Facturas', 1.6],
+        ['Estudios', 12.5],
+        ['Viajes', 10],
+        ['Pension', 2.4],
+        ['Seguros', 4]
+      ]
+    }]
+  });
+  
+   chart3 = new Highcharts.Chart({
+    chart: {
+      renderTo: 'gra-area2',
+      plotBackgroundColor: '#FFF',
+      plotBorderWidth: null,
+      plotShadow: false
+      
+    },
+    title: {
+          text: 'Categorias'
+    },
+    tooltip: {
+      formatter: function() {
+              return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %';
+      }
+    },
+    plotOptions: {
+      pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+                  enabled: false
+          },
+          showInLegend: true
+        }
+    },
+    series: [{
+      type: 'pie',
+      name: 'Browser share',
+      data: [
+        ['Transporte',       26.8],
+        {
+                name: 'Casa',
+                y: 45.0,
+                sliced: true,
+                selected: true
+        },
+        ['Ocio',    8.5],
+        ['Comida',     19],
+        ['Otros',   0.7],
+        ['Facturas', 1.6],
+        ['Estudios', 12.5],
+        ['Viajes', 10],
+        ['Pension', 2.4],
+        ['Seguros', 4]
+      ]
+    }]
+  });
+
+  $('input[name$="fecha1"]').datepicker();
+  $('input[name$="fecha2"]').datepicker();
+
+  $('div.datepicker').click(function(){
+    $(this).css('display', 'none');
+  });
+
+  $('a#mes-actual').tooltip({
+      placement:'bottom'
+  });
+
+});
+</script>
+</body>
+</html>

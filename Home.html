@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="encoding">
+    <title>Cube</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/cube.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="FortAwesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+
+  </head>
+
+<body>
+  
+  <div class="menu-principal">
+    <div class="menu-principal-controles">
+      <div class="container">
+        <ul class="mainnav">
+          <li class="active">
+            <a href="./">
+              <i class="icon-home"></i>
+              <span>Inicio</span>
+            </a>              
+          </li>
+                
+          <li>
+            <a href="./faq.html">
+              <i class="icon-search"></i>
+              <span>Buscar</span>
+            </a>              
+          </li>
+         
+          <li>
+            <a href="./reports.html">
+              <i class="icon-bar-chart"></i>
+              <span>Graficas</span>
+            </a>            
+          </li>
+          
+          <li>          
+            <a href="./guidely.html">
+              <i class="icon-folder-open"></i>
+              <span>Ultimo dia</span>
+            </a>                    
+          </li>
+          
+          <li>          
+            <a href="./pricing.html">
+              <i class="icon-edit"></i>
+              <span>Crear</span>
+            </a>            
+          </li>
+
+          <li>     
+            <a href="#l">
+              <i class=" icon-share-alt"></i>
+              <span>Más</span>
+              <b class="caret"></b>
+            </a>       
+          </li>
+        </ul>
+        <img src="img/logo.png" class="incomius-logo" alt="Incomius Logo">
+        <ul class="mainnav pull-right">
+          <li class="dropdown">         
+            <a href="./pricing.html" class="dropdown" data-toggle="dropdown">
+              <i class="icon-user"></i>
+              <span>Javier Vargas</span>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu" style="text-align:left; margin-top: -0.5px; margin-right: -2px;">
+              <li><a tabindex="-1" href="#">Perfil</a></li>
+              <li><a tabindex="-1" href="#;">Mis cuentas</a></li>
+              <li class="divider"></li>
+              <li><a tabindex="-1" href="#">Salir</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div> 
+    </div> 
+  </div>
+  
+  <div id="contenido">
+    <div class="cuerpo-contenido">
+      <div class="container">
+        <div class="row">
+          <div class="span4">
+            
+            <div class="contenedores">
+              <div class="cabecera-contenedor">
+                <i class="icon-globe"></i>
+                <h3>Gastos del mes actual</h3>
+              </div> 
+              
+              <div class="cuerpo-contenedor" style="padding:0; height:346px;">
+                <div class="btn-group" style="position:absolute; left:7px; top:7px; z-index:2;">
+                  <a class="btn  dropdown-toggle btn-t-action" data-toggle="dropdown"  href="#"><i class="icon-cog" style="width:auto; color:#4A515B; margin-right:5px;"></i><span class="caret"></span></a>
+                  
+                  <ul class="dropdown-menu">
+                      <li><a href="#">Ingresos</a></li>
+                      <li><a href="#">Gastos</a></li>
+                  </ul>
+                </div>
+                <div id="gra-area" class="contenedor-grafica" style=" height:344px; clear:both;"></div>
+              </div>
+            </div>
+            
+          </div>
+          <div class="span8">
+            <div class="contenedores">
+              <div class="cabecera-contenedor">
+                <i class="icon-bar-chart"></i>
+                <h3>Ingresos y gastos de los ultimos 15 dias</h3>
+              </div> 
+              
+              <div class="cuerpo-contenedor" style="padding:0; height:346px;">
+                <div class="btn-group" style="position:absolute; left:7px; top:7px; z-index:2;">
+                  <a class="btn  dropdown-toggle btn-t-action" data-toggle="dropdown"  href="#"><i class="icon-cog" style="width:auto; color:#4A515B; margin-right:5px;"></i><span class="caret"></span></a>
+                  
+                  <ul class="dropdown-menu">
+                      <li><a href="#">Ultimos meses</a></li>
+                      <li><a href="#">Ultimos dias</a></li>
+                  </ul>
+                </div>
+                <div id="gra" class="contenedor-grafica" style=" height:342px; clear:both; padding-top:2px;"></div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+          
+        <div class="row">
+          <div class="span4">
+            
+            <div class="contenedores" style="height:264px;">
+              <div class="cabecera-contenedor">
+                <i class="icon-tasks"></i>
+                <h3>Resumen del mes actual</h3>
+              </div> 
+              
+              <div class="cuerpo-contenedor" style="padding:0; height:221px;">
+                <a data-toggle="modal" class="btn btn-t-action" href="#resumen" style="position:absolute; left:7px; top:7px;"> <i class="icon-external-link" style="width:auto; color:#4A515B;"></i></a>
+                <div class="estadistica">
+                  <i class="icon-plus balance"></i>
+                  <span class="balance">2.832,56€</span>
+                  <p style="color:#4A515B;">Balance</p>
+                </div>
+                
+                <div class="estadistica">
+                  <i class="icon-plus"></i>
+                  <span>5.832,72€</span>
+                  <p>Ingresos</p>
+                </div>
+                
+                <div class="estadistica es">
+                  <i class="icon-minus"></i>
+                  <span>3.832,98€</span>
+                  <p>Gastos</p>
+                </div>
+                
+              </div>
+            </div>
+            
+          </div>
+          <div class="span8">
+            
+            <div class="contenedores">
+              <div class="cabecera-contenedor">
+                <i class="icon-table"></i>
+                <h3>Ultimos movimientos</h3>
+              </div> 
+              
+              <div class="cuerpo-contenedor" style="padding:0;  ">
+                <table class="table tabla-descripcion" style="height:100%; margin:0;">
+                  <thead>
+                    <tr>
+                      <th>Fecha</th>
+                      <th>Descripción</th>
+                      <th>Categoria</th>
+                      <th>Importe</th>
+                      <th>Acción</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>12/05/2012</td>
+                      <td>Prestamo coche</td>
+                      <td>Gastos fijos</td>
+                      <td class="negativo">-205.66€</td>
+                      <td>
+                        <div class="btn-group pull-right">
+                          <a class="btn dropdown-toggle btn-t-action" data-toggle="dropdown" href="#">
+                            <i class="icon-cog"></i>
+                            <span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a href="#" id="edit" >
+                                <i class="icon-edit"></i>
+                                Editar
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" id="eliminar" >
+                                <i class="icon-trash"></i>
+                                Borrar
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>12/05/2012</td>
+                      <td>Recibo de luz</td>
+                      <td>Gastos fijos</td>
+                      <td class="negativo">-69.37€</td>
+                      <td>
+                        <div class="btn-group pull-right">
+                          <a class="btn dropdown-toggle btn-t-action" data-toggle="dropdown" href="#">
+                            <i class="icon-cog"></i>
+                            <span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a href="#" id="edit" >
+                                <i class="icon-edit"></i>
+                                Editar
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" id="eliminar" >
+                                <i class="icon-trash"></i>
+                                Borrar
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>12/05/2012</td>
+                      <td>Nomina de mayo + paga extra</td>
+                      <td>Nomina</td>
+                      <td class="positivo">+1,678.30€</td>
+                      <td>
+                        <div class="btn-group pull-right">
+                          <a class="btn dropdown-toggle btn-t-action" data-toggle="dropdown" href="#">
+                            <i class="icon-cog"></i>
+                            <span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a href="#" id="edit" >
+                                <i class="icon-edit"></i>
+                                Editar
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" id="eliminar" >
+                                <i class="icon-trash"></i>
+                                Borrar
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>11/05/2012</td>
+                      <td>Pago de inquilinos de Mayo</td>
+                      <td>Alquiler piso</td>
+                      <td class="positivo">+580.00€</td>
+                      <td>
+                        <div class="btn-group pull-right">
+                          <a class="btn dropdown-toggle btn-t-action" data-toggle="dropdown" href="#">
+                            <i class="icon-cog"></i>
+                            <span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a href="#" id="edit" >
+                                <i class="icon-edit"></i>
+                                Editar
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" id="eliminar" >
+                                <i class="icon-trash"></i>
+                                Borrar
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>09/05/2012</td>
+                      <td>Compra en el supermercado(supersol)</td>
+                      <td>Gastos de la casa</td>
+                      <td class="negativo">-45.61€</td>
+                      <td>
+                        <div class="btn-group pull-right">
+                          <a class="btn dropdown-toggle btn-t-action" data-toggle="dropdown" href="#">
+                            <i class="icon-cog"></i>
+                            <span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a href="#" id="edit" >
+                                <i class="icon-edit"></i>
+                                Editar
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#" id="eliminar" >
+                                <i class="icon-trash"></i>
+                                Borrar
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="resumen" style="overflow:hidden; margin:-250px 0 0 -130px; width:350px;">
+    <div class="modal-header">
+      <a class="close" data-dismiss="modal">×</a>
+      <i class="icon-tasks"></i>
+      <h3>Año 2012</h3>
+    </div>
+    <div class="modal-body" style="padding:0;">
+      <table class="table tabla-descripcion derecha">
+        <thead>
+          <tr>
+            <th>Mes</th>
+            <th>Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Enero</td>
+            <td class="negativo">-7,567.30€</td>
+          </tr>
+          <tr>
+            <td>Febrero</td>
+            <td class="positivo">+16,958.66€</td>
+          </tr>
+          <tr>
+            <td>Marzo</td>
+            <td class="negativo">-78,586.30€</td>
+          </tr>
+          <tr>
+            <td>Abril</td>
+            <td class="positivo">+1,458.99€</td>
+          </tr>
+          <tr>
+            <td>Mayo</td>
+            <td class="positivo">+4,586.39€</td>
+          </tr>
+          <tr>
+            <td>Diciembre</td>
+            <td class="positivo">+10,495.90€</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="modal-footer">
+      <p style="margin:0;">
+        <select class="span2">
+          <option value="2012">Seleccione año</option>
+          <option value="2012">2012</option>
+          <option value="2011">2011</option>
+          <option value="2010">2010</option>
+          <option value="2009">2009</option>
+        </select>
+      </p>  
+      <!--<a href="#" class="btn" data-dismiss="modal" style="width:47px;">Salir</a>-->
+    </div>
+  </div>
+  
+  <div id="feedback">
+    <a href="https://incomius.uservoice.com/" target="_blank">
+      <img src="http://widget.uservoice.com/dcache/widget/feedback-tab.png?t=Sugerencias&amp;c=ffffff&amp;r=90" alt="Sugerencias">
+    </a>
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.js" type="text/javascript"></script>
+<script src="js/highcharts.js" type="text/javascript"></script>
+<script>
+var chart1;
+var chart2;
+
+
+$(document).ready(function() {
+    
+    $('a#edit').tooltip({
+      placement:'bottom'
+    });
+    $('#ayuda-grafica').tooltip({
+      placement:'top'
+    });
+    $('a#eliminar').tooltip({
+      placement:'bottom'
+    });
+    $('li#menu-ayuda').tooltip({
+      placement:'right'
+    });
+    
+  chart1 = new Highcharts.Chart({
+    chart: {
+      renderTo: 'gra',
+      type: 'line',
+      backgroundColor: '#FBFBFB'
+    },
+    title: {
+       text: 'Gráfico'
+    },
+    xAxis: {
+       categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15']
+    },
+    yAxis: {
+       min: 0,
+       title: {
+          text: 'Euros €'
+       }
+    },
+     series: [{
+      name: 'Gastos',
+      data: [390,115,0,277,22,123,124,210,125,790,125,0,224,367,925],
+    }]
+  });
+  chart2 = new Highcharts.Chart({
+    chart: {
+      renderTo: 'gra-area',
+      plotBackgroundColor: '#FBFBFB',
+      plotBorderWidth: null,
+      plotShadow: false
+      
+    },
+    title: {
+          text: 'Categorias'
+    },
+    tooltip: {
+      formatter: function() {
+              return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %';
+      }
+    },
+    plotOptions: {
+      pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+                  enabled: false
+          },
+          showInLegend: true
+        }
+    },
+    series: [{
+      type: 'pie',
+      name: 'Browser share',
+      data: [
+        ['Transporte',       26.8],
+        {
+                name: 'Casa',
+                y: 45.0,
+                sliced: true,
+                selected: true
+        },
+        ['Ocio',    8.5],
+        ['Comida',     19],
+        ['Otros',   0.7]
+      ]
+    }]
+  });
+  
+  $('ul.pull-right').hover(
+    function(){
+      $("ul.mainnav.pull-right > li").addClass('open');
+    },
+    function(){
+      $("ul.mainnav.pull-right > li").removeClass('open');
+    }
+  );
+});
+</script>
+</body>
+</html>
